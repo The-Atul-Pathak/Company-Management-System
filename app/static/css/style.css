@@ -8,66 +8,74 @@ body {
 }
 
 .top {
-  height: 50%;
+  flex: 1; /* takes half height */
   background: #3B82F6;
-  border-bottom-left-radius: 208px;
-  border-bottom-right-radius: 208px;
+  border-bottom-left-radius: 20vw;
+  border-bottom-right-radius: 20vw;
   text-align: center;
+  padding: 2vh 2vw;
 }
-.bottom{
-    height: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #F9FAFB;
-    font-size: 24px;
+
+.bottom {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #F9FAFB;
+  font-size: 2vw; /* scales with screen width */
 }
 
 #form {
-    height: 291px;
-    width: 393px;
+  max-width: 90%;
+  width: 400px; /* fallback */
 }
 
-h1{
-    color: #F9FAFB;
+h1 {
+  color: #F9FAFB;
 }
 
-#title{
-    font-size: 64px;
-    margin: 0;
+#title {
+  font-size: 6vw; /* scales */
+  margin: 0;
 }
+
 #logo {
-    margin: 0 auto;
-    display: block;
-    height: 300px;
-    width: 300px;
-    border-radius: 100%;
-    background: #D9D9D9;
+  margin: 0 auto;
+  display: block;
+  height: 20vh;
+  width: 20vh;
+  border-radius: 50%;
+  background: #D9D9D9;
 }
 
-#emp_id{
-    height: 50px;
-    width: 374px;
-    border-radius: 15px;
-    font-size: 24px; 
-    padding-left: 10px;
-}
-#password{
-    height: 50px;
-    width: 374px;
-    border-radius: 15px;
-    font-size: 24px;
-    padding-left: 10px; 
+input {
+  height: 6vh;
+  width: 100%;
+  border-radius: 15px;
+  font-size: 1rem;
+  padding-left: 10px;
+  margin-bottom: 1rem;
 }
 
-#login{
-    align-self: center;
-    margin: 0 auto;
-    display: block;
-    height: 66px;
-    width: 244px;
-    border-radius: 15px;
-    background-color: #3B82F6;
-    color: #ECECEC;
-    font-size: 32px;
+#login {
+  margin: 0 auto;
+  display: block;
+  height: 7vh;
+  width: 60%;
+  border-radius: 15px;
+  background-color: #3B82F6;
+  color: #ECECEC;
+  font-size: 1.5rem;
+  border: none;
+}
+
+/* Media Queries for very small screens */
+@media (max-width: 480px) {
+  #title {
+    font-size: 8vw;
+  }
+
+  .bottom {
+    font-size: 4vw;
+  }
 }
