@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects Management</title>
+  <link rel="stylesheet" href="../../static/css/proj_style.css">
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="Sidebar">
+    <div class="side-btn"></div>
+    <div class="side-btn"></div>
+    <div class="side-btn"></div>
+    <div class="side-btn"></div>
+    <div class="side-btn"></div>
+  </div>
+
+  <!-- Header -->
+  <div class="Header">
+    <h1 class="title">PROJECTS MANAGEMENT</h1>
+    <div class="header-controls">
+      <input type="text" class="search" placeholder="Search Project">
+      <button class="round-btn"></button>
+      <button class="round-btn"></button>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="MainContent">
+    <div class="top-controls">
+      <button class="new-project" id="newProjectBtn">New Project +</button>
+      <button class="filter">Filter</button>
+    </div>
+
+    <div class="project-list">
+      <table id="projectTable">
+        <thead>
+          <tr>
+            <th>S.No</th>
+            <th>Name</th>
+            <th>Client</th>
+            <th>Price</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>#1</td>
+            <td>Name1</td>
+            <td>Client1</td>
+            <td>$1000</td>
+            <td>Complete</td>
+            <td>
+              <button class="edit-btn">✏️</button>
+              <button class="delete-btn">🗑️</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Modal for Adding/Editing Project -->
+  <div id="projectModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 id="modalTitle">Add New Project</h2>
+      <form id="projectForm">
+        <label for="projName">Name:</label>
+        <input type="text" id="projName" required><br>
+
+        <label for="projClient">Client:</label>
+        <input type="text" id="projClient" required><br>
+
+        <label for="projPrice">Price:</label>
+        <input type="text" id="projPrice" required><br>
+
+        <label for="projStatus">Status:</label>
+        <select id="projStatus" required>
+          <option value="Complete">Complete</option>
+          <option value="Ongoing">Ongoing</option>
+          <option value="Pending">Pending</option>
+        </select><br>
+
+        <button type="submit" id="saveProject">Save</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Link JS -->
+  <script src="../../static/js/proj_script.js"></script>
+</body>
+</html>

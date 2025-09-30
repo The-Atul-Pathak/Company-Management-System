@@ -1,0 +1,244 @@
+body {
+  margin: 0;
+  background-color: #111827;
+  font-family: 'Arial', sans-serif;
+  color: #F9FAFB;
+}
+
+/* ===== Sidebar ===== */
+.Sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 70px;
+  height: 100%;
+  background-color: #1F2937;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  gap: 20px;
+}
+
+.side-btn {
+  width: 40px;
+  height: 40px;
+  background-color: #D1D5DB;
+  border-radius: 50%;
+}
+
+/* ===== Header ===== */
+.Header {
+  position: fixed;
+  top: 0;
+  left: 70px; /* after sidebar */
+  right: 0;
+  height: 70px;
+  background-color: #1F2937;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search {
+  height: 40px;
+  width: 250px;
+  border: none;
+  border-radius: 20px;
+  padding: 0 15px;
+  background-color: #9CA3AF;
+  outline: none;
+}
+
+.round-btn {
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 50%;
+  background-color: #D1D5DB;
+  cursor: pointer;
+}
+
+/* ===== Main Content ===== */
+.MainContent {
+  margin-left: 70px;
+  margin-top: 70px;
+  padding: 20px;
+}
+
+/* Top controls */
+.top-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.new-project {
+  background-color: #3B82F6;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.filter {
+  background-color: #34D399;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Project List */
+.project-list {
+  background-color: #1F2937;
+  border-radius: 10px;
+  padding: 15px;
+  overflow-x: auto;
+}
+
+.project-list table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.project-list th, 
+.project-list td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.project-list th {
+  color: #9CA3AF;
+  font-weight: 400;
+}
+
+.project-list tr {
+  background-color: #374151;
+  border-bottom: 1px solid #4B5563;
+}
+
+.project-list tr:last-child {
+  border-bottom: none;
+}
+
+.project-list td {
+  font-size: 14px;
+}
+
+.project-list td input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .search {
+    width: 150px;
+  }
+
+  .top-controls {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .Sidebar {
+    flex-direction: row;
+    height: 60px;
+    width: 100%;
+    top: auto;
+    bottom: 0;
+    justify-content: center;
+  }
+
+  .Header {
+    left: 0;
+    padding: 0 10px;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
+  .search {
+    width: 120px;
+  }
+}
+
+/* ===== Modal ===== */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1000; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #1F2937;
+  padding: 20px;
+  border-radius: 10px;
+  width: 350px;
+  color: white;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+}
+
+.modal-content label {
+  display: block;
+  margin-top: 10px;
+}
+
+.modal-content input,
+.modal-content select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: none;
+}
+
+.modal-content button {
+  margin-top: 15px;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #3B82F6;
+  color: white;
+  cursor: pointer;
+}
+
+.close {
+  float: right;
+  font-size: 20px;
+  cursor: pointer;
+}
