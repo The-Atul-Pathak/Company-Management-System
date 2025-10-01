@@ -9,11 +9,19 @@
 <body>
   <!-- Sidebar -->
   <div class="Sidebar">
-    <div class="side-btn"></div>
-    <div class="side-btn"></div>
-    <div class="side-btn"></div>
-    <div class="side-btn"></div>
-    <div class="side-btn"></div>
+    <div class="side-btn" id="logo"></div>
+    <div class="side-btn-holder">
+      <div class="side-btn"></div>
+    </div>
+    <div class="side-btn-holder">
+      <div class="side-btn"></div>
+    </div>
+    <div class="side-btn-holder">
+      <div class="side-btn"></div>
+    </div>
+    <div class="side-btn-holder">
+      <div class="side-btn"></div>
+    </div>
   </div>
 
   <!-- Header -->
@@ -21,8 +29,7 @@
     <h1 class="title">PROJECTS MANAGEMENT</h1>
     <div class="header-controls">
       <input type="text" class="search" placeholder="Search Project">
-      <button class="round-btn"></button>
-      <button class="round-btn"></button>
+      <button class="round-btn" id="dp"></button>
     </div>
   </div>
 
@@ -30,7 +37,6 @@
   <div class="MainContent">
     <div class="top-controls">
       <button class="new-project" id="newProjectBtn">New Project +</button>
-      <button class="filter">Filter</button>
     </div>
 
     <div class="project-list">
@@ -41,6 +47,7 @@
             <th>Name</th>
             <th>Client</th>
             <th>Price</th>
+            <th>Date</th>
             <th>Status</th>
             <th>Action</th>
           </tr>
@@ -51,6 +58,7 @@
             <td>Name1</td>
             <td>Client1</td>
             <td>$1000</td>
+            <td>2025-09-30</td>  
             <td>Complete</td>
             <td>
               <button class="edit-btn">✏️</button>
@@ -64,30 +72,69 @@
 
   <!-- Modal for Adding/Editing Project -->
   <div id="projectModal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <h2 id="modalTitle">Add New Project</h2>
-      <form id="projectForm">
-        <label for="projName">Name:</label>
-        <input type="text" id="projName" required><br>
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>New Project</h2>
+    <form id="projectForm">
+      <div class="form-group">
+        <label for="projName">Name</label>
+        <input type="text" id="projName" required>
+      </div>
 
-        <label for="projClient">Client:</label>
-        <input type="text" id="projClient" required><br>
+      <div class="form-group">
+        <label for="projClient">Client</label>
+        <input type="text" id="projClient" required>
+      </div>
 
-        <label for="projPrice">Price:</label>
-        <input type="text" id="projPrice" required><br>
+      <div class="form-group">
+        <label>Timeline</label>
+        <div class="timeline-grid">
+          <div class="timeline-item">
+            <label for="projStart">Start Date</label>
+            <input type="date" id="projStart" required>
+          </div>
+          <div class="timeline-item">
+            <label for="projDuration">Duration</label>
+            <input type="text" id="projDuration" placeholder="e.g. 3 months">
+          </div>
+          <div class="timeline-item">
+            <label for="projEnd">End Date</label>
+            <input type="date" id="projEnd">
+          </div>
+        </div>
+      </div>
 
-        <label for="projStatus">Status:</label>
-        <select id="projStatus" required>
-          <option value="Complete">Complete</option>
-          <option value="Ongoing">Ongoing</option>
-          <option value="Pending">Pending</option>
-        </select><br>
+      <div class="form-group">
+        <label>Tasks</label>
+        <div id="tasksContainer">
+          <div class="dynamic-item">
+            <input type="text" class="dynamic-input">
+            <button type="button" class="remove-item">✖</button>
+          </div>
+        </div>
+        <button type="button" id="addTask" class="add-btn">＋ Add Task</button>
+      </div>
 
-        <button type="submit" id="saveProject">Save</button>
-      </form>
-    </div>
+      <div class="form-group">
+        <label>Team</label>
+        <div id="teamContainer">
+          <div class="dynamic-item">
+            <input type="text" class="dynamic-input">
+            <button type="button" class="remove-item">✖</button>
+          </div>
+        </div>
+        <button type="button" id="addTeam" class="add-btn">＋ Add Team Member</button>
+      </div>
+
+      <div class="form-group">
+        <label for="projPrice">Price</label>
+        <input type="text" id="projPrice" required>
+      </div>
+
+      <button type="submit" id="saveProject" class="save-btn">Save</button>
+    </form>
   </div>
+</div>
 
   <!-- Link JS -->
   <script src="../../static/js/proj_script.js"></script>
